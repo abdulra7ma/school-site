@@ -271,26 +271,19 @@
       <!-- ============================================================== -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <!-- Bootstrap tether Core JavaScript -->
-      <script src="{% static 'libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
-      <script src="{% static 'libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js' %}"></script>
-      <script src="{% static 'extra-libs/sparkline/sparkline.js' %}"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.5/perfect-scrollbar.min.js"></script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.js" integrity="sha512-/F8GvcdSUiYuL8wFMLRspx/PemIOOZBMiro7M9Wwn9V/wfzIH+RwIauASTQdJqaaZdSHBP4lmtq6VH5bbTNaJw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <!--Wave Effects -->
-      <script src="{% static 'js/waves.js' %}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.js" integrity="sha512-MzXgHd+o6pUd/tm8ZgPkxya3QUCiHVMQolnY3IZqhsrOWQaBfax600esAw3XbBucYB15hZLOF0sKMHsTPdjLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <!--Menu sidebar -->
-      <script src="{% static 'js/sidebarmenu.js' %}"></script>
-      <!--Custom JavaScript -->
-      <script src="{% static 'js/custom.min.js' %}"></script>
-      <!--This page JavaScript -->
-      <!-- <script src="../dist/js/pages/dashboards/dashboard1.js"></script> -->
-      <!-- Charts js Files -->
-      <script src="{% static 'libs/flot/excanvas.js' %}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.2/jquery.sidebar.min.js" integrity="sha512-sE4GyQp4GEFV4qtelZtk1VmjxViVV9zC3PnZCKEjmDIiNZ+MpY/53EKGk+eZUx4FvvH7F2QgduRa2Oxe/pK7fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/4.2.2/jquery.flot.js" integrity="sha512-GzTUEIEYsUnIsjjeFHNxX9mO4JTRcztouKrHl8ZejyU067oDfhhAd4mpOHygKkiXRuJr+AHF/v3y42Nk/LrvUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="{% static 'libs/flot/jquery.flot.pie.js' %}"></script>
-      <script src="{% static 'libs/flot/jquery.flot.time.js' %}"></script>
-      <script src="{% static 'libs/flot/jquery.flot.stack.js' %}"></script>
-      <script src="{% static 'libs/flot/jquery.flot.crosshair.js' %}"></script>
-      <script src="{% static 'libs/flot.tooltip/js' %}"></script>
-      <script src="{% static 'js/pages/chart/chart-page-init.js' %}"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.pie.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.time.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.stack.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.crosshair.js"></script>
       {% block js %}{% endblock js %}
    </body>
 </html>
