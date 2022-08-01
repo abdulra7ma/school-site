@@ -89,6 +89,7 @@ class UpdateStudentView(LoginRequiredMixin, FormView):
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs["instance"] = self.get_object()
+        kwargs["request"] = self.request
         return kwargs
 
     def get_context_data(self, **kwargs):
@@ -96,6 +97,11 @@ class UpdateStudentView(LoginRequiredMixin, FormView):
         context["form_title"] = "Update Student"
         context["student"] = self.get_object()
         return context
+
+    def get(self, request, *args, **kwargs):
+        if self.get_object() is None:
+            return HttpResponseRedirect(reverse("school:add-student"))
+        return super().get(request, *args, **kwargs)
 
 
 class DeleteStudentView(LoginRequiredMixin, DeleteView):

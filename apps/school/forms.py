@@ -29,7 +29,9 @@ class StudentForm(ModelForm):
             )
 
     def update(self, commit=True):
-        object = super().save(commit)
+        object = super().save(False)
+        object.updated_by = self.request.user
+        object.save()
         return object
 
     def save(self, commit):
