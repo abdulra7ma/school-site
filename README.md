@@ -60,3 +60,5 @@ pipenv install --dev
 ```
 pytest --cache-clear --capture=no --showlocals --verbose
 ```
+
+> **_NOTE:_**: In this project i have not tested the django signals, so if you want to contribute you can send a sample test code for signals.

@@ -12,16 +12,16 @@ ALLOWED_HOSTS = ["*"]
 
 
 # ##### DATABASE CONFIGURATION ############################
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": join(PROJECT_ROOT, "run", "dev.sqlite3"),
-#     }
-# }
-
 DATABASES = {
-    "default": env.db("CORE_DATABASE_URL", default="psql://postgres:schoolsite_db_password_1@database:5432/schoolsite_db")
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": join(PROJECT_ROOT, "run", "dev.sqlite3"),
+    }
 }
+
+# DATABASES = {
+#     "default": env.db("CORE_DATABASE_URL", default="psql://postgres:schoolsite_db_password_1@database:5432/schoolsite_db")
+# }
 
 # ##### APPLICATION CONFIGURATION #########################
 

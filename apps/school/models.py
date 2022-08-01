@@ -28,8 +28,21 @@ class Student(models.Model):
     address = models.CharField(verbose_name="Student Address", max_length=128)
     floor = models.IntegerField(verbose_name="Student Floor")
 
-    created_by = models.ForeignKey(Teacher, verbose_name="Created By", on_delete=models.SET_NULL, null=True)
-    
+    created_by = models.ForeignKey(
+        Teacher,
+        verbose_name="Created By",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="created_by_user",
+    )
+    updated_by = models.ForeignKey(
+        Teacher,
+        verbose_name="Created By",
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="updated_by_user",
+    )
+
 
 class Class(models.Model):
     name = models.CharField(verbose_name="Class Name", max_length=64)

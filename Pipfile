@@ -18,6 +18,8 @@ factory-boy = "*"
 pytest = "*"
 pytest-django = "*"
 djlint = "*"
+pytest-mock = "*"
+model-bakery = "*"
 
 [requires]
 python_version = "3.10"

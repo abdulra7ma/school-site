@@ -39,9 +39,10 @@ class LoginForm(Form):
     def clean_password(self, *args, **kwargs):
         self.password = self.cleaned_data.get("password")
 
-        if self.user.exists():
-            if not check_password(self.password, self.user.first().password):
-                raise forms.ValidationError(self.error_messages["not_valid"])
+        if hasattr(self, "user"):
+            if self.user.exists():
+                if not check_password(self.password, self.user.first().password):
+                    raise forms.ValidationError(self.error_messages["not_valid"])
 
         return self.password
 
