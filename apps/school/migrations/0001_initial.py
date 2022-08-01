@@ -26,7 +26,10 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("password", models.CharField(max_length=128, verbose_name="password")),
+                (
+                    "password",
+                    models.CharField(max_length=128, verbose_name="password"),
+                ),
                 (
                     "last_login",
                     models.DateTimeField(
@@ -44,12 +47,16 @@ class Migration(migrations.Migration):
                 (
                     "email",
                     models.EmailField(
-                        max_length=254, unique=True, verbose_name="email address"
+                        max_length=254,
+                        unique=True,
+                        verbose_name="email address",
                     ),
                 ),
                 (
                     "full_name",
-                    models.CharField(max_length=128, verbose_name="Student Full Name"),
+                    models.CharField(
+                        max_length=128, verbose_name="Student Full Name"
+                    ),
                 ),
                 (
                     "is_active",
@@ -96,7 +103,10 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("name", models.CharField(max_length=64, verbose_name="Class Name")),
+                (
+                    "name",
+                    models.CharField(max_length=64, verbose_name="Class Name"),
+                ),
             ],
         ),
         migrations.CreateModel(
@@ -113,11 +123,15 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "full_name",
-                    models.CharField(max_length=128, verbose_name="Student Full Name"),
+                    models.CharField(
+                        max_length=128, verbose_name="Student Full Name"
+                    ),
                 ),
                 (
                     "email",
-                    models.EmailField(max_length=254, verbose_name="Student Email"),
+                    models.EmailField(
+                        max_length=254, verbose_name="Student Email"
+                    ),
                 ),
                 (
                     "date_of_birth",
@@ -125,11 +139,15 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "_class",
-                    models.CharField(max_length=64, verbose_name="Student Class"),
+                    models.CharField(
+                        max_length=64, verbose_name="Student Class"
+                    ),
                 ),
                 (
                     "address",
-                    models.CharField(max_length=128, verbose_name="Student Address"),
+                    models.CharField(
+                        max_length=128, verbose_name="Student Address"
+                    ),
                 ),
                 ("floor", models.IntegerField(verbose_name="Student Floor")),
             ],
@@ -146,7 +164,12 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("name", models.CharField(max_length=64, verbose_name="School Name")),
+                (
+                    "name",
+                    models.CharField(
+                        max_length=64, verbose_name="School Name"
+                    ),
+                ),
                 ("classes", models.ManyToManyField(to="school.class")),
             ],
         ),

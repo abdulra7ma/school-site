@@ -47,11 +47,7 @@ DJANGO_DEFAULT_APPS = (
 )
 
 
-LOCAL_APPS = (
-    "school",
-    "authentication",
-    "django_extensions"
-)
+LOCAL_APPS = ("school", "authentication", "django_extensions")
 
 
 # these are the apps

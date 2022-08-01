@@ -23,6 +23,7 @@ class LoginView(FormView):
         login(self.request, user)
         return super().form_valid(form)
 
+
 class SignupView(FormView):
     template_name = "authentication/signup.html"
     form_class = SignupForm
@@ -36,5 +37,3 @@ class SignupView(FormView):
     def form_valid(self, form):
         form.save(True)
         return super().form_valid(form)
-
-

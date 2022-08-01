@@ -41,8 +41,12 @@ class LoginForm(Form):
 
         if hasattr(self, "user"):
             if self.user.exists():
-                if not check_password(self.password, self.user.first().password):
-                    raise forms.ValidationError(self.error_messages["not_valid"])
+                if not check_password(
+                    self.password, self.user.first().password
+                ):
+                    raise forms.ValidationError(
+                        self.error_messages["not_valid"]
+                    )
 
         return self.password
 
@@ -54,7 +58,13 @@ class LoginForm(Form):
 class SignupForm(UserCreationForm):
     class Meta:
         model = Teacher
-        fields = ["email", "phone_number", "full_name", "password1", "password2"]
+        fields = [
+            "email",
+            "phone_number",
+            "full_name",
+            "password1",
+            "password2",
+        ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -106,16 +116,18 @@ class SignupForm(UserCreationForm):
         self.password = self.cleaned_data.get("password1")
 
         if len(self.password) < 8:
-            raise forms.ValidationError("Passwords length can not be less than 8 characters")
+            raise forms.ValidationError(
+                "Passwords length can not be less than 8 characters"
+            )
 
         return self.password
-    
+
     def save(self, commit):
         user = super().save(False)
 
-        # activate any newly created user by default, 
+        # activate any newly created user by default,
         # if there's a need for extra validation you can send him an activation email
         user.is_active = True
         user.save()
-        
+
         return user

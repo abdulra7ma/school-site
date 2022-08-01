@@ -7,7 +7,14 @@ from school.models import Student
 class StudentForm(ModelForm):
     class Meta:
         model = Student
-        fields = ["full_name", "email", "date_of_birth", "student_class", "address", "floor"]
+        fields = [
+            "full_name",
+            "email",
+            "date_of_birth",
+            "student_class",
+            "address",
+            "floor",
+        ]
 
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop("request", None)

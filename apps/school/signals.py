@@ -19,14 +19,18 @@ def add_student_to_class(sender, instance, created, **kwargs):
         class_object = Class.objects.filter(name=student_class)
 
         if not class_object.exists():
-            class_object = Class.objects.create(name=student_class, teacher=instance.created_by)
+            class_object = Class.objects.create(
+                name=student_class, teacher=instance.created_by
+            )
             class_object.students.add(instance)
         else:
             class_object = class_object.first()
             class_object.students.add(instance)
 
         # send notification email
-        send_student_notification_email(instance, instance.created_by.full_name, instance.student_class)
+        send_student_notification_email(
+            instance, instance.created_by.full_name, instance.student_class
+        )
 
 
 @receiver(post_save, sender=Class)
@@ -40,7 +44,3 @@ def add_class_to_school(sender, instance, created, **kwargs):
     if created:
         school, is_created = School.objects.get_or_create(name="Admin School")
         school.classes.add(instance)
-
-
-
-

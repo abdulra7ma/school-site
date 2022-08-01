@@ -10,7 +10,10 @@ LOGIN_PATH = reverse("auth:login")
 def test_redirct_if_login_success(client: Client, user_account):
     user = user_account()
 
-    data = {"phone_number": user.phone_number, "password": "super-secret-password"}
+    data = {
+        "phone_number": user.phone_number,
+        "password": "super-secret-password",
+    }
 
     user.set_password(data["password"])
     user.save()
@@ -22,7 +25,10 @@ def test_redirct_if_login_success(client: Client, user_account):
 
 @pytest.mark.django_db
 def test_login_wrong_credentials_failure(client):
-    data = {"phone_number": "jane@example.com", "password": "super-secret-password"}  # nosec
+    data = {
+        "phone_number": "jane@example.com",
+        "password": "super-secret-password",
+    }  # nosec
     response = client.post(LOGIN_PATH, data)
 
     assert response.status_code == 200
@@ -40,4 +46,3 @@ def test_redirect_if_already_authenticated(auto_login_user):
     response = client.post(LOGIN_PATH)
 
     assert response.status_code == 302
-

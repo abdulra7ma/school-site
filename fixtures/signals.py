@@ -1,9 +1,16 @@
 # tests/intergration_tests/conftest.py
 import pytest
-from django.db.models.signals import m2m_changed, post_delete, post_save, pre_delete, pre_save
+from django.db.models.signals import (
+    m2m_changed,
+    post_delete,
+    post_save,
+    pre_delete,
+    pre_save,
+)
 
 
 __all__ = ["mute_signals"]
+
 
 @pytest.fixture(autouse=True)  # Automatically use in tests.
 def mute_signals(request):

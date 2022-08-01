@@ -35,8 +35,16 @@ class StudentListView(LoginRequiredMixin, ListView):
                 | Q(address__icontains=search_string)
                 | Q(floor__icontains=search_string)
             )
-            
-        return queryset.values("pk", "full_name", "email", "date_of_birth", "student_class", "address", "floor")
+
+        return queryset.values(
+            "pk",
+            "full_name",
+            "email",
+            "date_of_birth",
+            "student_class",
+            "address",
+            "floor",
+        )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -20,7 +20,16 @@ class StudentAdmin(admin.ModelAdmin):
 
 @admin.register(Teacher)
 class TeacherAdmin(admin.ModelAdmin):
-    list_display = ("id", "password", "last_login", "is_superuser", "email", "full_name", "is_active", "is_staff")
+    list_display = (
+        "id",
+        "password",
+        "last_login",
+        "is_superuser",
+        "email",
+        "full_name",
+        "is_active",
+        "is_staff",
+    )
     list_filter = ("last_login", "is_superuser", "is_active", "is_staff")
     raw_id_fields = ("groups", "user_permissions")
 

@@ -14,7 +14,10 @@ class Migration(migrations.Migration):
             model_name="teacher",
             name="phone_number",
             field=models.CharField(
-                default=1, max_length=64, unique=True, verbose_name="Phone Number"
+                default=1,
+                max_length=64,
+                unique=True,
+                verbose_name="Phone Number",
             ),
             preserve_default=False,
         ),

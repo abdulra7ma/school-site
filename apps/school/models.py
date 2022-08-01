@@ -6,9 +6,13 @@ from school.utils.constants import ModelConst
 
 
 class Teacher(PermissionsMixin, AbstractBaseUser):
-    phone_number = models.CharField(verbose_name="Phone Number", max_length=64, unique=True)
+    phone_number = models.CharField(
+        verbose_name="Phone Number", max_length=64, unique=True
+    )
     email = models.EmailField(ModelConst.EMAIL, unique=True)
-    full_name = models.CharField(verbose_name="Student Full Name", max_length=128)
+    full_name = models.CharField(
+        verbose_name="Student Full Name", max_length=128
+    )
     is_active = models.BooleanField(ModelConst.IS_ACTIVE, default=True)
     is_staff = models.BooleanField(ModelConst.IS_ACTIVE, default=False)
 
@@ -21,10 +25,14 @@ class Teacher(PermissionsMixin, AbstractBaseUser):
 
 
 class Student(models.Model):
-    full_name = models.CharField(verbose_name="Student Full Name", max_length=128)
+    full_name = models.CharField(
+        verbose_name="Student Full Name", max_length=128
+    )
     email = models.EmailField(verbose_name="Student Email")
     date_of_birth = models.DateField(verbose_name="Student Date Of Birth")
-    student_class = models.CharField(verbose_name="Student Class", max_length=64)
+    student_class = models.CharField(
+        verbose_name="Student Class", max_length=64
+    )
     address = models.CharField(verbose_name="Student Address", max_length=128)
     floor = models.IntegerField(verbose_name="Student Floor")
 
@@ -46,7 +54,9 @@ class Student(models.Model):
 
 class Class(models.Model):
     name = models.CharField(verbose_name="Class Name", max_length=64)
-    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, verbose_name="Class Teacher")
+    teacher = models.ForeignKey(
+        Teacher, on_delete=models.CASCADE, verbose_name="Class Teacher"
+    )
     students = models.ManyToManyField(Student, blank=True)
 
 

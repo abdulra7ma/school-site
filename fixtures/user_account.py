@@ -14,7 +14,7 @@ def user_account(db):  # pylint: disable=unused-argument
 
 @pytest.fixture
 def test_password():
-   return 'strong-test-pass'
+    return "strong-test-pass"
 
 
 @pytest.fixture
@@ -24,6 +24,7 @@ def auto_login_user(db, client, user_account, test_password):
             user = user_account()
             user.set_password(test_password)
             user.save()
-        client.login(username=user.phone_number, password=test_password)
+        client.force_login(user)
         return client, user
+
     return make_auto_login
